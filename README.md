@@ -6,7 +6,7 @@
 
 **Authors:**
 * **Rafael Palma Santos** ([@Rafael-jar](https://github.com/Rafael-jar))
-* **Alex Bataille**
+* **Alex Bataille ([@Alexei-x](https://github.com/Alexei-X))**
 
 This project develops a system to generate fair schedules for Round-Robin tournaments. The main challenge was tackling the computational complexity of balancing home-field advantage against opponent strength.
 
@@ -18,9 +18,9 @@ Standard tournament schedules are often unfair. A player might randomly get a "h
 
 To solve this, we first had to quantify "fairness." We created a **weighted fairness score** based on three factors:
 
-1.  **Home vs. Difficulty (60% weight):** Our most crucial factor. Schedules that allow a player to play every strong opponent at home (or every weak opponent away) are penalized.
+1.  **Home vs. Difficulty (60% weight):** Our most crucial factor. Schedules that allow a player to play at every strong opponent's home (or every weak opponent home) are penalized.
 2.  **Pattern Homogeneity (30% weight):** Ensures all players have a similar home/away experience. It's unfair if Player A has a perfect `H-A-H-A` schedule while Player B has `H-H-A-A-H-H`.
-3.  **Home/Away Alternation (10% weight):** A small penalty for streaks like `H-H` or `A-A`. We found this was less important than the other two factors.
+3.  **Home/Away Alternation (10% weight):** A small penalty for streaks like `H-H` or `A-A` (ideally the best would be `H-A-H-A`). We found this was less important than the other two factors.
 
 ### 2. A Two-Part Solution
 
